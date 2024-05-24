@@ -1,15 +1,22 @@
 
 import './App.css'
+import FilteredProducts from './components/FilteredProducts/FilteredProducts'
 import Main from './components/Main/Main'
-import Slider from './components/Slider/Slider'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SingleProduct from './components/FilteredProducts/SingleProduct'
 
 
 function App() {
 
   return (
     <>
-     <Main />
-     <Slider />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/filteredProducts/:id' element={<FilteredProducts />} />
+          <Route path='/filteredProducts/:id/:id' element={<SingleProduct />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
