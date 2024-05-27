@@ -4,6 +4,7 @@ import FilteredProducts from './components/FilteredProducts/FilteredProducts'
 import Main from './components/Main/Main'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SingleProduct from './components/FilteredProducts/SingleProduct'
+import { useSelector } from 'react-redux' 
 
 
 function App() {

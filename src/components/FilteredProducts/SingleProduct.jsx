@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { addToCart } from '../../features/slices/cartSlice'
+import { useDispatch } from 'react-redux'
 
 const SingleProduct = () => {
 
@@ -13,6 +15,8 @@ const SingleProduct = () => {
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor)
   console.log("size", size)
+
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -77,7 +81,19 @@ const SingleProduct = () => {
                   </div>
 
                   <div className='flex justify-center w-full'>
-                    <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300 mt-4 w-full">
+                    <button
+                      onClick={() => dispatch(addToCart({
+                        id: item.id,
+                        name: item.name,
+                        size: size,
+                        img: item.img,
+                        text:item.text,
+                        color: color,
+                        price: item.price,
+                        amount: 1,
+                        totalPrice: item.price
+                      }))}
+                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300 mt-4 w-full">
                       Add to Cart
                     </button>
                   </div>
