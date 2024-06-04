@@ -1,5 +1,5 @@
 import React from 'react'
-import clothes from '../../assets/images/clothes.jpg'
+import clothes from '../../assets/images/banner.jpg'
 import { filterProducts } from '../../features/slices/productsSlice'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -26,7 +26,7 @@ const NavigateButtons = () => {
                     )
                 })}
             </div>
-            <div className='bg-green-300 p-2 w-[55%] mx-auto rounded-md'>
+            <div className='bg-pink-500 p-2 w-[55%] mx-auto rounded-md'>
                 <h3 className='text-orange-900 text-center text-lg font-inter font-bold tracking-normal leading-none'>SALES UP TO 50%</h3>
             </div>
             <div className='flex justify-center items-center py-4 '>

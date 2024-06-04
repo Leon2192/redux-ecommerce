@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo-urban.png'
 
 const Footer = () => {
     const year = new Date().getFullYear()
@@ -10,11 +10,15 @@ const Footer = () => {
         </div>
         <div className='flex items-center justify-around pt-4'> 
             <div>
-                <img className='h-20' src={logo} alt="logo" />
+                <img className='h-36' src={logo} alt="logo" />
             </div>
             <div>
-                <p className='text-black text-sm font-inter '>
-                    Copyright {year} page by Leonardo Manuel Arrieta
+                <p className='text-black text-md font-inter font-bold'>
+                    Copyright {year} page by 
+                    
+                     <span className='underline text-orange-800'>
+                    Leonardo Manuel Arrieta
+                    </span>
                 </p>
             </div>
         </div>

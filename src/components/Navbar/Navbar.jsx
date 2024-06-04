@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo-urban.png'
 import Cart from '../Cart/Cart'
 import { logout } from '../../features/slices/authSlice'
 import { useSelector, useDispatch } from 'react-redux'
@@ -19,12 +19,12 @@ const Navbar = () => {
       <>
         <div className="bg-black p-4 w-full flex justify-center items-center ">
           <p className="text-white font-inter text-2xl font-bold  ">
-            Redux Toolkit Time
+           Welcome!
           </p>
         </div>
         <div className="flex justify-around items-center">
           <div>
-            <img className="h-28 w-full" src={logo} alt="store"></img>
+            <img className="h-36 w-full" src={logo} alt="store"></img>
           </div>
           <div className="flex flex-row items-center">
             <div className="flex flex-row items-center">
@@ -87,16 +87,16 @@ const Navbar = () => {
                   className="mr-2"
                 ></Avatar>
               )}
-              <div onClick={() => dispatch(logout())}>
+              {/* <div onClick={() => dispatch(logout())}>
                   <p className="font-inter text-sm font-medium tracking-normal leading-none">
                     Hi {name.charAt("0").toUpperCase() + name.slice(1)}
                   </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
         <div className="bg-black p-4 w-full flex items-center justify-center mx-auto">
-          <p className="text-white font-inter text-base font-medium ">50& OFF</p>
+          <p className="text-white font-inter text-base font-medium ">50% OFF</p>
           <p className="text-white font-inter text-base font-medium mx-96">
             Free shipping and returns
           </p>

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { enqueueSnackbar } from "notistack";
 
 export const cartSlice = createSlice({
     name: "cart",
@@ -22,6 +23,7 @@ export const cartSlice = createSlice({
                     exist.totalPrice += productId.price;
                     state.totalAmount++;
                     state.totalPrice += productId.price;
+                    enqueueSnackbar('Product added to cart!', { variant: 'success' });
                 } else {
                     state.cart.push({
                         id: productId.id,
@@ -35,6 +37,7 @@ export const cartSlice = createSlice({
                     })
                     state.totalAmount++
                     state.totalPrice += productId.price
+                    enqueueSnackbar('Product added to cart!', { variant: 'success' });
                 }
             } catch (err) {
                 return err
@@ -49,6 +52,7 @@ export const cartSlice = createSlice({
                     product.size === productId.size &&
                     product.color === productId.color
                 );
+               
                 if (exist.amount === 1) {
                     state.cart = state.cart.filter((product) =>
                         product.id !== productId.id ||
@@ -57,11 +61,14 @@ export const cartSlice = createSlice({
                     )
                     state.totalAmount--
                     state.totalPrice -= productId.price
+                    enqueueSnackbar('Product deleted to cart!', { variant: 'error' });
+                    
                 } else {
                     exist.amount--;
                     exist.totalPrice -= productId.price;
                     state.totalAmount--;
                     state.totalPrice -= productId.price;
+                    enqueueSnackbar('Product deleted to cart!', { variant: 'error' });
                 }
             } catch (err) {
                 return err

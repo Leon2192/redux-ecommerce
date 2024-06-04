@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button, Dialog, DialogFooter, DialogBody, DialogHeader } from '@material-tailwind/react'
 import { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux'

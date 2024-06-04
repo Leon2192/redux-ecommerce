@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import {
     Card,
@@ -63,7 +64,7 @@ const ProductSectionItem = ({
         size: defaultSize,
         color:defaultColor
     }))}
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md"
+    className="bg-pink-500 hover:bg-black text-white font-bold py-2 px-4 rounded-lg shadow-md p-4"
 >
     Add to Cart
 </button>

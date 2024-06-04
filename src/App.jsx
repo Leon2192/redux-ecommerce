@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SingleProduct from './components/FilteredProducts/SingleProduct'
 import { useSelector } from 'react-redux' 
 import Login from './components/Login/Login'
+import { SnackbarProvider } from 'notistack'
 
 function App() {
 
@@ -17,9 +18,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <SnackbarProvider 
+      maxSnack={3}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+     />
         <Routes>
-          <Route path='/' 
-          element={authUser ? <Main /> : <Login />} />
+          {/* <Route path='/' 
+          element={authUser ? <Main /> : <Login />} /> */}
+           <Route path='/' element={<Main />} />
           <Route path='/filteredProducts/:id' element={<FilteredProducts />} />
           <Route path='/filteredProducts/:id/:id' element={<SingleProduct />} />
           <Route path='/login' element={<Login />} />
